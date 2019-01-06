@@ -71,7 +71,7 @@ const Mutation = {
     // lowercase theri email
     args.email = args.email.toLowerCase();
     // hash their password
-    const password = await bycrpt.hash(args.password, 10);
+    const password = await bcrypt.hash(args.password, 10);
     // create the use in the database
     const user = await ctx.db.mutation.createUser(
       {
